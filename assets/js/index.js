@@ -1,219 +1,316 @@
-`use strict`;
-
-// let name = prompt("Enter your name");
-
-// console.log(`Your name is ${name}`);
-
-// let colorRed = "#f00";
-
-// console.log(`My favorite color is ${colorRed}`);
-
-// let check = false;
-
-// let undenfiendVariable;
-
-// console.log (typeof check);
-
-// console.log (typeof undenfiendVariable);
-
-// let nullValute = null;
-
-// console.log(typeof nullValute);
-
-// let inputOne = prompt("enter your num");
-// let inputTwo = prompt("enter your num2");
-
-// inputOne = +inputOne;
-// inputTwo = +inputTwo;
-
-// let testValue = String(50);
-
-// console.log(testValue + "  strings");
-
-// let boolValue = Boolean(50);
-
-// console.log(boolValue);
-
-// let numberOne = Number(inputOne);
-// let numberTwo = Number(inputTwo);
-
-// let result = numberOne + numberTwo;
-
-// console.log(result);
-
-// let input = prompt(`enter a part of hour`);
-
-// +input;
-
-// if (input <= 15) {
-//   console.log(`first part of hour`);
-// } else if (input > 15 && input <= 30) {
-//   console.log(`second part of hour`);
-// } else if (input > 30 && input <= 45) {
-//   console.log(`third part of hour`);
-// } else if (input > 45 && input <= 60) {
-//   console.log(`fourth part of hour`);
-// }
-
-// --------------- ПРАКТИКА ------------------------
-
-// let num_1 = Number("c");
-// let num_2 = Number("d");
-
-// let result = num_1 * num_2;
-
-// console.log(result);
-
-// let num_3 = Number("c");
-// let num_4 = Number("d");
-
-// let result_2 = num_3 * num_4;
-
-// console.log(result_2);
-
-// let num_5 = Number("c");
-// let num_6 = Number("d");
-
-// let result_3 = num_5 * num_6;
-
-// console.log(result_3);
-
-// let text = "javascript";
-
-// console.log(typeof javascript);
-
-// let number = 11;
-
-// console.log(typeof number);
-
-// let enter = true;
-
-// console.log(typeof enter);
-
-// let number_2 = 100;
-
-// console.log(typeof number_2);
-
-// let num = 1;
-// let num2 = 11;
-
-// num += num2;
-// console.log(num);
-
-// num -= num2;
-// console.log(num);
-
-// num *= num2;
-// console.log(num);
-
-// num /= num2;
-// console.log(num);
-
-// num += 1;
-// console.log(num);
-
-// num -= 1;
-// console.log(num);
-
-// let input = prompt("Enter number");
-
-// console.log(input ** 2);
-
-// let inputOne = prompt("Enter number");
-// let inputTwo = prompt("Enter number");
-
-// let num1 = parseInt(inputOne);
-// let num2 = parseInt(inputTwo);
-
-// console.log((num1 + num2) / 2);
-
-// let seconds = prompt("Enter any minutes");
-
-// console.log(seconds * 60);
-
-// let userName = prompt("Enter your name");
-
-// let greeting = "Hello";
-
-// let name = "userName";
-
-// console.log(greeting + ` ` + userName);
-
-// let input = prompt(`enter a part of hour`);
-
-// +input;
-
-// let input = +prompt("Enter number");
-
-// input = +input;
-
-// if (input === 10) {
-//   console.log(`Верно`);
-// } else if (input > 10 || input < 10) {
-//   console.log(`Неверно`);
-// } else {
-//   console.log(`Enter a valid number`);
-// }
-
-// let input = +prompt("Enter true or false");
-
-// input = +input;
-
-// if (input === true) {
-//   console.log(true);
-// } else if (input !== false) {
-//   console.log(false);
-// }
-
-// let buy = +prompt("Enter sum of purchases");
-
-// let sale = 3;
-
-// let sale2 = 5;
-
-// buy = +buy;
-
-// if (buy > 500 % sale) {
-//   console.log(buy % sale);
-// } else if (buy > 800 % sale2) {
-//   console.log(buy % sale2);
-// }
-
-// let iteration = 0;
-
-// while (iteration <= 11) {
-//   console.log(iteration);
-
-//   iteration++;
-// }
-
-// let iter = 0;
-
-// do {
-//   console.log("Wow");
-// } while (iter === undefined);
-
-// for (let i = 0; i <= 100; i++) {
-//   if (i % 2 === 0) {
-//     console.log(i  );
-//     continue;
-//   break;
-//   }
-// }
-
-// let num;
-
-// do {
-//   num = prompt("Введите ваш возраст, вы должны быть старше 17");
-// } while (num < 17 && num);
-
-// let iteration = 0;
-
-// do {
-//   (iteration > 10 && iteration < 50) 
-//     if(i % 5 === 0) {
-//       console.log(i);
-//       continue;
-//     }
-
-
+'use strict'
+
+// 1 Задание
+
+function simpleNumber(digit) {
+    if (digit < 2) {
+      return false;
+    } else if (digit === 2) {
+      return true;
+    }
+  
+    let i = 2;
+    const limit = Math.sqrt(digit);
+  
+    while (i <= limit) {
+      if (digit % i === 0) {
+        return false;
+      }
+      i += 1;
+    }
+  
+    return true;
+  }
+  
+  console.log(simpleNumber(3));
+  console.log(simpleNumber(4));
+  console.log(simpleNumber(5));
+
+
+  //2 Задание
+
+  function primeNumber(a, b) {
+    return a % b === 0 ? true : false;
+  }
+  
+  console.log(primeNumber(25, 5));
+  console.log(primeNumber(15, 3));
+  console.log(primeNumber(15, 5));
+  console.log(primeNumber(15, 4));
+
+  // 3 Задание
+
+  function isTriangle(a, b, c) {
+    return a + b > c && a + c > b && b + c > a
+      ? "Треугольник существует"
+      : "Треугольник не существует";
+  }
+  
+  console.log(isTriangle(5, 4, 3));
+
+  // 4 Задание
+
+  function areaOfATriangle(a, h) {
+    return 0.5 * a * h;
+  }
+  
+  console.log(areaOfATriangle(5, 2));
+  
+  function rectangleArea(a, b) {
+    return a * b;
+  }
+  
+  console.log(rectangleArea(3, 5));
+
+  // Массивы, объекты
+
+  const student = {
+    name: "Александр",
+    surname: "Антипов",
+    gender: "Муж.",
+    details: "Телефон:+999999999999",
+  },
+  chair = {
+    course: "1",
+    chair: "Программистика",
+  },
+  numberArray = [],
+  randomNumberArray = [];
+
+// просто заполняем
+for (let i = 0; i < 100; i++) numberArray.push(i);
+
+console.log(numberArray); // результат
+
+for (let i = 0; i < 100; i++)
+  randomNumberArray.push(
+    Math.floor(Math.random() * (Math.floor(99999999) - Math.ceil(0))) +
+      Math.ceil(0)
+  );
+
+  console.log(numberArray.length, randomNumberArray.length); // размеры массивов
+
+numberArray.forEach((number, i) => {
+  if (i % 2 === 0) console.log(number); // четные выводим по индексу
+});
+
+console.log("-".repeat(30));
+
+randomNumberArray.forEach((number, i) => {
+  if (i % 2 === 0) console.log(number); // четные выводим по индексу
+});
+
+console.log("-".repeat(30));
+
+numberArray.forEach((number) => {
+  if (number % 2 === 0) console.log(number); // четные выводим
+});
+
+console.log("-".repeat(30));
+
+randomNumberArray.forEach((number) => {
+  if (number % 2 === 0) console.log(number); // четные выводим
+});
+
+console.log("-".repeat(30));
+
+numberArray.forEach((number, i) => {
+  if (number === 0) console.log(i); // нулевой индекс
+});
+
+console.log("-".repeat(30));
+
+randomNumberArray.forEach((number) => {
+  if (number === 0) console.log(i); // нулевой индекс
+});
+
+console.log(numberArray.reduce((a, b) => (b === 0 ? a + 1 : a + 0), 0));
+
+function Book(obj) {
+    this.book = obj;
+  
+    this.showBook = () => {
+      for (let [key, val] of Object.entries(this.book)) {
+        console.log(key, val);
+      }
+    };
+  }
+  
+  let book = new Book({
+    author: "Александр Авраменко",
+    name: "100 експрес-уроків української",
+    year: 2020,
+    publisher: "#книголав",
+  });
+  
+  let electronBook = new Book({
+    author: "Александр Авраменко",
+    name: "100 експрес-уроків української",
+    year: 2020,
+    publisher: "#книголав",
+    version: 700344,
+    format: "PDF",
+  });
+  
+  book.showBook();
+  
+  console.log("-".repeat(30));
+  
+  electronBook.showBook();
+
+  function MyArray(array) {
+    this.array = array;
+  
+    this.pop = () => {
+      this.array = this.array.slice(0, this.array.length - 1);
+    };
+  
+    this.push = (elem) => {
+      this.array = [...this.array, elem];
+    };
+  
+    this.forEach = (f) => {
+      for (let i in this.array) f(this.array[i], i);
+    };
+  
+    this.show = () => console.log(this.array);
+  }
+  
+  let array = new MyArray([1, 2, 3, 4, 5]);
+  
+  array.pop();
+  array.show();
+  array.push(6);
+  array.show();
+  array.forEach((number, i) => console.log(number, i));
+
+  function division(number) {
+    let num = number;
+  
+    if (number % 5 === 0) number = 5;
+    else if (number % 3 === 0) number = 3;
+    else if (number % 2 === 0) number = 2;
+  
+    switch (number) {
+      case 5:
+        console.log(`${num} делиться на 5`);
+        break;
+      case 3:
+        console.log(`${num} делиться на 3`);
+        break;
+      case 2:
+        console.log(`${num} делиться на 2`);
+        break;
+      default:
+        break;
+    }
+  }
+  
+  division(9);
+
+
+  let result = null;
+
+switch (1) {
+  case 1:
+    result = "Зима";
+    break;
+  case 2:
+    result = "Весна";
+    break;
+  case 3:
+    result = "Лето";
+    break;
+  case 4:
+    result = "Осень";
+  default:
+    break;
+}
+
+console.log(result);
+
+let month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+switch (month[1]) {
+  case 1:
+    console.log("Зима");
+    break;
+  case 2:
+    console.log("Зима");
+    break;
+  case 3:
+    console.log("Весна");
+    break;
+  case 4:
+    console.log("Весна");
+    break;
+  case 5:
+    console.log("Весна");
+    break;
+  case 6:
+    console.log("Лето");
+    break;
+  case 7:
+    console.log("Лето");
+    break;
+  case 8:
+    console.log("Лето");
+    break;
+  case 9:
+    console.log("Осень");
+    break;
+  case 10:
+    console.log("Осень");
+    break;
+  case 11:
+    console.log("Осень");
+    break;
+  case 12:
+    console.log("Зима");
+    break;
+
+  default:
+    break;
+}
+
+function dayOfWeek(day) {
+    let days = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
+  
+    return 0 <= day - 1 && day - 1 <= 7 ? days[day - 1] : "Введен неверный день недели";
+  }
+  
+  console.log(dayOfWeek(7));
+  5
+  function decade(day) {
+    if (day <= 10) console.log("Первая декада");
+    else if (day <= 21) console.log("Вторая декада");
+    else if (day <= 31) console.log("Третья декада");
+    else console.log("Введите коректное число");
+  }
+  
+  decade(239);
+  6
+  let n = 5;
+  for (var f = 1; n; f *= n--);
+  
+  console.log(f);
+  7
+  let n = 100,
+    sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  
+  console.log(sum);
+  8
+  let iterator = {
+    from: 5,
+    to: 12,
+    *[Symbol.iterator]() {
+      for (let i = this.from; i <= this.to; i++) {
+        yield i;
+      }
+    },
+  };
+  
+  for (let i of iterator) console.log(i);
